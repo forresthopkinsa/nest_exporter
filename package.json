@@ -6,7 +6,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "nodemon"
+    "start": "nodemon",
+    "build": "pkg -o dist/nest_exporter -t node16-linux-x64 index.js"
   },
   "dependencies": {
     "express": "^4.17.1",
