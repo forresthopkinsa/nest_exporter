@@ -1,0 +1,6 @@
+# See: https://developers.google.com/nest/device-access/authorize
+google_device_access:
+  project_id: 12345678-90ab-cdef-1234-567890abcdef
+  client_id: 1234567890ab-cdef1234567890abcdef1234567890ab.apps.googleusercontent.com
+  client_secret: 1234567890ABCdef12345678
+  refresh_token: 1//1234567890ABCdef1234567890AB-Cdef1234567890ABCdef1234567890ABCdef1234567890ABCdef12345-67890ABCdef12
