@@ -32,8 +32,8 @@ doc?: { help: string, type: "counter" | "gauge" | "histogram" | "summary" }
 function createMetricString(key, arr, doc) {
   let str = "";
   if (doc) {
-    str += `# HELP ${key} ${doc.help}\n`;
-    str += `# TYPE ${key} ${doc.type}\n`;
+    str += doc.help ? `# HELP ${key} ${doc.help}\n` : "";
+    str += doc.type ? `# TYPE ${key} ${doc.type}\n` : "";
   }
   for (const { val, ...labels } of arr) {
     const labelEntries = Object.entries(labels);
@@ -145,7 +145,6 @@ function devicesToMetrics(obj, requestedStructure) {
     .join("\n");
 }
 
-// return;
 async function getAccessToken() {
   const url = `https://www.googleapis.com/oauth2/v4/token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&refresh_token=${REFRESH_TOKEN}&grant_type=refresh_token`;
   const resp = await fetch(url, { method: "POST" });
